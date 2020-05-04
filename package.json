@@ -1,0 +1,38 @@
+{
+    "name": "vasanthdeveloper",
+    "description": "My 🙋‍♂️ portfolio for nerds 👨‍💻 and personally curated 📡 utilities.",
+    "version": "0.0.0",
+    "license": "UNLICENSED",
+    "bin": "dist/exe/index.js",
+    "main": "dist/index.js",
+    "homepage": "https://github.com/vasanthdeveloper/vasanthdeveloper#readme",
+    "bugs": "https://github.com/vasanthdeveloper/vasanthdeveloper/issues",
+    "author": {
+        "name": "Vasanth Developer",
+        "email": "vasanth@vasanthdeveloper.com",
+        "url": "https://vasanth.tech"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vasanthdeveloper/vasanthdeveloper.git"
+    },
+    "scripts": {
+        "start": "tsc -w"
+    },
+    "keywords": [],
+    "dependencies": {
+        "commander": "^5.1.0",
+        "node-emoji": "^1.10.0"
+    },
+    "devDependencies": {
+        "@types/node": "^13.13.4",
+        "@types/node-emoji": "^1.8.1",
+        "@typescript-eslint/eslint-plugin": "^2.30.0",
+        "@typescript-eslint/parser": "^2.30.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-prettier": "^3.1.3",
+        "prettier": "^2.0.5",
+        "typescript": "^3.8.3"
+    }
+}

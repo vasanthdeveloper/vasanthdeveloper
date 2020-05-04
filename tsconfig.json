@@ -1,0 +1,23 @@
+//   ___    __________   |  Vasanth Developer (Vasanth Srivatsa)
+//   __ |  / /___  __ \  |  ------------------------------------------------
+//   __ | / / __  / / /  |  https://github.com/vasanthdeveloper/vasanthdeveloper.git
+//   __ |/ /  _  /_/ /   |
+//   _____/   /_____/    |  TypeScript transpiler run control
+//                       |
+
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "alwaysStrict": true,
+        "charset": "UTF-8",
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "newLine": "LF",
+        "preserveConstEnums": true,
+        "removeComments": true,
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "target": "ES2015"
+    }
+}
