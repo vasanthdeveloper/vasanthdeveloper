@@ -8,10 +8,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-function start(options) {
+const github_api_1 = __importDefault(require("github-api"));
+function fetch() {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(options);
+        const gh = new github_api_1.default();
+        const user = yield gh.getUser('vasanthdeveloper');
+        const projects = (yield user.listRepos()).data;
+        const returnable = [];
+        projects.forEach((project, index) => {
+            if (project.name != 'vasanthdeveloper' && index < 6) {
+                returnable.push({
+                    name: project.name,
+                    link: project.html_url,
+                });
+            }
+        });
+        return returnable;
     });
 }
-exports.default = start;
+exports.default = fetch;

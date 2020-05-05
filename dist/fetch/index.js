@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -13,19 +12,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const commander_1 = __importDefault(require("commander"));
-const node_emoji_1 = __importDefault(require("node-emoji"));
-const main_1 = __importDefault(require("./main"));
-const appData = require('../../package.json');
-function main() {
+const ora_1 = __importDefault(require("ora"));
+const github_1 = __importDefault(require("./github"));
+const youtube_1 = __importDefault(require("./youtube"));
+function fetch(options) {
     return __awaiter(this, void 0, void 0, function* () {
-        process.title = 'vasanthdeveloper';
-        const app = new commander_1.default.Command('vasanthdeveloper');
-        app.description(node_emoji_1.default.strip(appData.description))
-            .version(`${appData.name} v${appData.version}`)
-            .option('-J, --json', 'output in JSON format')
-            .action(() => main_1.default(app.opts()));
-        app.parse(process.argv);
+        const spinner = ora_1.default();
+        if (!options.json) {
+            console.clear();
+            spinner.start('Loading');
+        }
+        const data = yield Promise.all([github_1.default(), youtube_1.default()]);
+        if (!options.json) {
+            spinner.stop();
+        }
+        return data;
     });
 }
-main();
+exports.default = fetch;

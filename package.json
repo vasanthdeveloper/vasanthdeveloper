@@ -1,10 +1,9 @@
 {
     "name": "vasanthdeveloper",
-    "description": "My 🙋‍♂️ portfolio for nerds 👨‍💻 and personally curated 📡 utilities.",
+    "description": "My 🙋‍♂️ portfolio for nerds 👨‍💻 in the 🚀 terminal.",
     "version": "0.0.0",
     "license": "UNLICENSED",
-    "bin": "dist/exe/index.js",
-    "main": "dist/index.js",
+    "bin": "dist/index.js",
     "homepage": "https://github.com/vasanthdeveloper/vasanthdeveloper#readme",
     "bugs": "https://github.com/vasanthdeveloper/vasanthdeveloper/issues",
     "author": {
@@ -17,16 +16,27 @@
         "url": "https://github.com/vasanthdeveloper/vasanthdeveloper.git"
     },
     "scripts": {
-        "start": "tsc -w"
+        "start": "tsc -w",
+        "build": "rm -rf ./dist && tsc"
     },
     "keywords": [],
     "dependencies": {
+        "axios": "^0.19.2",
+        "boxen": "^4.2.0",
+        "chalk": "^4.0.0",
+        "cheerio": "^1.0.0-rc.3",
         "commander": "^5.1.0",
-        "node-emoji": "^1.10.0"
+        "github-api": "^3.3.0",
+        "node-emoji": "^1.10.0",
+        "ora": "^4.0.4",
+        "table": "^5.4.6"
     },
     "devDependencies": {
+        "@types/cheerio": "^0.22.18",
         "@types/node": "^13.13.4",
         "@types/node-emoji": "^1.8.1",
+        "@types/ora": "^3.2.0",
+        "@types/table": "^5.0.0",
         "@typescript-eslint/eslint-plugin": "^2.30.0",
         "@typescript-eslint/parser": "^2.30.0",
         "eslint": "^6.8.0",
