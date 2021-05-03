@@ -1,0 +1,5 @@
+root command -> interactively show all my work!
+on -> navigate to my social media handles directly
+twitter -> show my tweets
+videos -> show my youtube videos
+projects -> show about my projects

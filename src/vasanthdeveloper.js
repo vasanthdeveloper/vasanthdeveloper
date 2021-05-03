@@ -5,4 +5,7 @@
  *  Created On 03 May 2021
  */
 
-console.log('hi 👋')
+import cli from './cli/index.js'
+
+// load and parse command line arguments
+await cli()
