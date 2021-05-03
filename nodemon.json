@@ -1,0 +1,9 @@
+{
+    "quiet": true,
+    "verbose": false,
+    "ext": "js",
+    "exec": "src/vasanthdeveloper.js",
+    "watch": [
+        "./src"
+    ]
+}

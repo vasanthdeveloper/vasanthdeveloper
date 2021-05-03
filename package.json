@@ -1,0 +1,33 @@
+{
+   "name": "vasanthdeveloper",
+   "description": "My 🙋‍♂️ portfolio for nerds 👨‍💻 in the 🚀 terminal.",
+   "version": "2.0.0",
+   "license": "UNLICENSED",
+   "bin": "src/vasanthdeveloper.js",
+   "type": "module",
+   "homepage": "https://github.com/vasanthdeveloper/vasanthdeveloper#readme",
+   "author": {
+      "name": "Vasanth Developer",
+      "email": "vasanth@vasanthdeveloper.com",
+      "url": "https://vasanth.tech"
+   },
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/vasanthdeveloper/vasanthdeveloper.git"
+   },
+   "scripts": {
+      "dev": "nodemon"
+   },
+   "keywords": [],
+   "devDependencies": {
+      "@babel/core": "^7.14.0",
+      "@babel/eslint-parser": "^7.13.14",
+      "@babel/plugin-syntax-top-level-await": "^7.12.13",
+      "eslint": "^7.25.0",
+      "eslint-config-prettier": "^8.3.0",
+      "eslint-plugin-prettier": "^3.4.0",
+      "eslint-plugin-simple-import-sort": "^7.0.0",
+      "nodemon": "^2.0.7",
+      "prettier": "^2.2.1"
+   }
+}
