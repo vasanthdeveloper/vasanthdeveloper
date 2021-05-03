@@ -9,7 +9,13 @@ import dirname from 'es-dirname'
 import glob from 'glob'
 import path from 'path'
 
+import { loadDefaultArgs } from './defaults.js'
+
 export default async () => {
+    // load the default arguments
+    // that are added to every command
+    const dargs = await loadDefaultArgs()
+
     // a global variable where we'll store
     // all the command in memory
     global.cmds = []
@@ -19,6 +25,9 @@ export default async () => {
     for (const file of files) {
         const { default: cmd } = await import(file)
         cmd['name'] = path.basename(path.join(file, '..'))
+
+        // add default args
+        cmd.args = cmd.args ? cmd.args.concat(dargs) : dargs
 
         global.cmds.push(cmd)
     }
@@ -32,7 +41,6 @@ export default async () => {
     // parse the commands
     const { command, argv } = commandLineCommands(valid)
 
-    // prepare the command that can be passed to an action
     const cmd = {
         ...global.cmds.find(cmd => cmd.name == (command || 'index')),
         ...{ argv },
@@ -44,9 +52,14 @@ export default async () => {
         argv: cmd.argv,
     })
 
+    // first, run all the option's actions!
+    for (const key in cmd.argv) {
+        const arg = cmd.args.find(arg => arg.name == key)
+
+        if (!arg || !arg.action) continue
+        await arg.action(cmd)
+    }
+
     // run the action tied to this command
     await cmd.action(cmd)
-
-    // exit gracefully
-    process.exit(0)
 }
