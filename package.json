@@ -20,10 +20,15 @@
     },
     "keywords": [],
     "dependencies": {
+        "@vasanthdeveloper/utilities": "^0.2.0",
+        "axios": "^0.21.1",
         "command-line-args": "^5.1.1",
         "command-line-commands": "^3.0.2",
+        "command-line-usage": "^6.1.1",
+        "dotenv": "^9.0.0",
         "es-dirname": "^0.1.0",
-        "glob": "^7.1.6"
+        "glob": "^7.1.6",
+        "open": "^8.0.7"
     },
     "devDependencies": {
         "@babel/core": "^7.14.0",

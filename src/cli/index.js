@@ -50,6 +50,7 @@ export default async () => {
     // for that given command
     cmd.argv = commandLineArgs(cmd.args, {
         argv: cmd.argv,
+        camelCase: true,
     })
 
     // first, run all the option's actions!
