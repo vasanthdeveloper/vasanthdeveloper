@@ -5,6 +5,7 @@
 
 const action = async cmd => {
     console.log('show the help and exit')
+    console.log('')
     process.exit(0)
 }
 

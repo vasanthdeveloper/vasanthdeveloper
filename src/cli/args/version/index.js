@@ -5,6 +5,7 @@
 
 const action = ({ argv }) => {
     console.log('show app version and exit')
+    console.log('')
     process.exit(0)
 }
 

@@ -9,6 +9,7 @@ import axios from 'axios'
 import dotenv from 'dotenv'
 
 import cli from './cli/index.js'
+import { footer, header } from './logger/banner.js'
 import profile from './profile.js'
 
 // load from .env
@@ -20,6 +21,12 @@ axios.defaults.baseURL =
 
 // get default profile info
 await profile()
+
+// show the header
+header()
+
+// show the footer, before exiting
+process.on('exit', footer)
 
 // load and parse command line arguments
 await cli()

@@ -34,6 +34,10 @@ const action = async cmd => {
             await open(url)
         }
     }
+
+    // put a new line if console log
+    // was output
+    cmd.argv.show && console.log('')
 }
 
 export default {
